@@ -1,2 +1,2 @@
 # Login-Form
-A basic WindowsFormsApp implementation for a Login window.
+A basic Login form implemented using WindowsForms and C#.
