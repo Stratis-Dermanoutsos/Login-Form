@@ -220,7 +220,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPasswordIcon)).EndInit();
             this.panelTop.ResumeLayout(false);
             this.panelTop.PerformLayout();
