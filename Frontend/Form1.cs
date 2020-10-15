@@ -174,7 +174,7 @@ namespace LoginForm
             if (validEmail && validPassword && users.Count > 0) { // If both email and password are correct
                 int index = ListHandler.BinaryRecursiveSearch(users, 0, users.Count - 1, textBoxEmail.Text);
 
-                if (index != -1 && users[index].Password.Equals(textBoxPassword.Text)) {
+                if (index != -1 && users[index].Password.Equals(PasswordHandler.GetSha512(textBoxPassword.Text))) {
                     MessageBox.Show("You are logged in!");
                     return;
                 }
@@ -193,7 +193,7 @@ namespace LoginForm
 
                 if (index == -1) {
                     //Add the new user and re-sort the List
-                    User newUser = new User(textBoxEmail.Text, textBoxPassword.Text, false);
+                    User newUser = new User(textBoxEmail.Text, PasswordHandler.GetSha512(textBoxPassword.Text), false);
                     users.Add(newUser);
                     users = ListHandler.QuickSort(users, 0, users.Count - 1);
 
