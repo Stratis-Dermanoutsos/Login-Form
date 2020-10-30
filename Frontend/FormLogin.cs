@@ -172,7 +172,9 @@ namespace LoginForm
                 int index = ListHandler.BinaryRecursiveSearch(users, 0, users.Count - 1, textBoxEmail.Text);
 
                 if (index != -1 && users[index].Password.Equals(PasswordHandler.GetSha512(textBoxPassword.Text))) {
-                    MessageBox.Show("You are logged in!");
+                    FormMain mainForm = new FormMain();
+                    this.Hide(); // Hide login form
+                    mainForm.Show(); // Show main form
                     return;
                 }
             }
