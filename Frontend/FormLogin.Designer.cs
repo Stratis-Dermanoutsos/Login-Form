@@ -1,6 +1,6 @@
 ﻿namespace LoginForm
 {
-    partial class Form1
+    partial class FormLogin
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -200,7 +200,7 @@
             this.pictureBoxUserIcon.TabIndex = 2;
             this.pictureBoxUserIcon.TabStop = false;
             // 
-            // Form1
+            // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -218,7 +218,7 @@
             this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.textBoxEmail);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form1";
+            this.Name = "FormLogin";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPasswordIcon)).EndInit();
             this.panelTop.ResumeLayout(false);

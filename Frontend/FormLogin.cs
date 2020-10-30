@@ -18,7 +18,7 @@ using System.Windows.Forms;
 
 namespace LoginForm
 {
-    public partial class Form1 : Form
+    public partial class FormLogin : Form
     {
         Color backgroundColor = Color.FromArgb(40, 54, 85);
         Color textFocusedColor = Color.FromArgb(77, 100, 141);
@@ -26,7 +26,7 @@ namespace LoginForm
 
         private List<User> users;
 
-        public Form1()
+        public FormLogin()
         {
             InitializeComponent();
 
