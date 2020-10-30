@@ -1,4 +1,5 @@
 ﻿using LoginForm.Backend;
+using LoginForm.Frontend;
 using LoginForm.Properties;
 using System;
 using System.Collections;
@@ -20,10 +21,6 @@ namespace LoginForm
 {
     public partial class FormLogin : Form
     {
-        Color backgroundColor = Color.FromArgb(40, 54, 85);
-        Color textFocusedColor = Color.FromArgb(77, 100, 141);
-        Color textNotFocusedColor = Color.FromArgb(208, 225, 249);
-
         private List<User> users;
 
         public FormLogin()
@@ -102,7 +99,7 @@ namespace LoginForm
         #region textBoxEmail
         private void textBoxEmail_GotFocus(object sender, EventArgs e)
         {
-            panel1.BackColor = textFocusedColor;
+            panel1.BackColor = GlobalVariables.blueberry;
             pictureBoxUserIcon.BackgroundImage = Resources.user1;
 
             if (textBoxEmail.Text.Equals("Email"))
@@ -111,7 +108,7 @@ namespace LoginForm
 
         private void textBoxEmail_LostFocus(object sender, EventArgs e)
         {
-            panel1.BackColor = textNotFocusedColor;
+            panel1.BackColor = GlobalVariables.periwinkle;
             pictureBoxUserIcon.BackgroundImage = Resources.user0;
 
             if (textBoxEmail.Text.Equals(string.Empty))
@@ -122,7 +119,7 @@ namespace LoginForm
         #region textBoxPassword
         private void textBoxPassword_GotFocus(object sender, EventArgs e)
         {
-            panel2.BackColor = textFocusedColor;
+            panel2.BackColor = GlobalVariables.blueberry;
             pictureBoxPasswordIcon.BackgroundImage = Resources.password1;
 
             if (textBoxPassword.Text.Equals("Password"))
@@ -131,7 +128,7 @@ namespace LoginForm
 
         private void textBoxPassword_LostFocus(object sender, EventArgs e)
         {
-            panel2.BackColor = textNotFocusedColor;
+            panel2.BackColor = GlobalVariables.periwinkle;
             pictureBoxPasswordIcon.BackgroundImage = Resources.password0;
 
             if (textBoxPassword.Text.Equals(string.Empty))

@@ -219,6 +219,7 @@
             this.Controls.Add(this.textBoxEmail);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPasswordIcon)).EndInit();
             this.panelTop.ResumeLayout(false);
