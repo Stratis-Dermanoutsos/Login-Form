@@ -46,5 +46,17 @@ namespace LoginForm.Frontend
         {
             Environment.Exit(0);
         }
+
+        private void buttonProfilePic_Click(object sender, EventArgs e)
+        {
+            if (openFileDialogProfilePic.ShowDialog() == DialogResult.OK) {
+                // Change the profile picture
+                string imagePath = openFileDialogProfilePic.FileName;
+                Bitmap image = new Bitmap(imagePath);
+                buttonProfilePic.BackgroundImage = (Image)image;
+
+                buttonProfilePic.Text = string.Empty; // Clear the string
+            }
+        }
     }
 }

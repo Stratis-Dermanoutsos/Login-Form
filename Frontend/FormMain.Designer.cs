@@ -28,42 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.panelTop = new System.Windows.Forms.Panel();
+            this.buttonProfilePic = new System.Windows.Forms.Button();
             this.labelTitle = new System.Windows.Forms.Label();
             this.buttonExit = new System.Windows.Forms.Button();
             this.panelBetween = new System.Windows.Forms.Panel();
             this.panelSubmenu = new System.Windows.Forms.Panel();
             this.panelMain = new System.Windows.Forms.Panel();
+            this.openFileDialogProfilePic = new System.Windows.Forms.OpenFileDialog();
             this.panelTop.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 23);
-            this.label1.TabIndex = 0;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(0, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 0;
             // 
             // panelTop
             // 
             this.panelTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(38)))));
+            this.panelTop.Controls.Add(this.buttonProfilePic);
             this.panelTop.Controls.Add(this.labelTitle);
             this.panelTop.Controls.Add(this.buttonExit);
             this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
@@ -72,6 +51,21 @@
             this.panelTop.Size = new System.Drawing.Size(800, 53);
             this.panelTop.TabIndex = 3;
             this.panelTop.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelTop_MouseMove);
+            // 
+            // buttonProfilePic
+            // 
+            this.buttonProfilePic.BackColor = System.Drawing.Color.Transparent;
+            this.buttonProfilePic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonProfilePic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonProfilePic.Font = new System.Drawing.Font("Segoe UI", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonProfilePic.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(225)))), ((int)(((byte)(249)))));
+            this.buttonProfilePic.Location = new System.Drawing.Point(653, 5);
+            this.buttonProfilePic.Name = "buttonProfilePic";
+            this.buttonProfilePic.Size = new System.Drawing.Size(45, 45);
+            this.buttonProfilePic.TabIndex = 2;
+            this.buttonProfilePic.Text = "Your Picture";
+            this.buttonProfilePic.UseVisualStyleBackColor = false;
+            this.buttonProfilePic.Click += new System.EventHandler(this.buttonProfilePic_Click);
             // 
             // labelTitle
             // 
@@ -132,6 +126,12 @@
             this.panelMain.Size = new System.Drawing.Size(625, 394);
             this.panelMain.TabIndex = 3;
             // 
+            // openFileDialogProfilePic
+            // 
+            this.openFileDialogProfilePic.FileName = "openFileDialogProfilePic";
+            this.openFileDialogProfilePic.Filter = "Image Files(*.BMP;*.JPG;*.GIF)|*.BMP;*.JPG;*.GIF";
+            this.openFileDialogProfilePic.InitialDirectory = "D:\\myFiles\\Photos";
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -163,5 +163,7 @@
         private System.Windows.Forms.Panel panelMain;
         private System.Windows.Forms.Button buttonExit;
         private System.Windows.Forms.Label labelTitle;
+        private System.Windows.Forms.Button buttonProfilePic;
+        private System.Windows.Forms.OpenFileDialog openFileDialogProfilePic;
     }
 }
