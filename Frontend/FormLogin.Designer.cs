@@ -69,7 +69,7 @@
             this.textBoxPassword.MaxLength = 16;
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.Size = new System.Drawing.Size(200, 29);
-            this.textBoxPassword.TabIndex = 0;
+            this.textBoxPassword.TabIndex = 1;
             this.textBoxPassword.Text = "Password";
             // 
             // panel1
@@ -79,7 +79,7 @@
             this.panel1.Location = new System.Drawing.Point(100, 210);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 5);
-            this.panel1.TabIndex = 1;
+            this.panel1.TabIndex = 12;
             // 
             // panel2
             // 
@@ -88,7 +88,7 @@
             this.panel2.Location = new System.Drawing.Point(100, 285);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(200, 5);
-            this.panel2.TabIndex = 1;
+            this.panel2.TabIndex = 13;
             // 
             // pictureBoxPasswordIcon
             // 
@@ -100,7 +100,7 @@
             this.pictureBoxPasswordIcon.Name = "pictureBoxPasswordIcon";
             this.pictureBoxPasswordIcon.Size = new System.Drawing.Size(40, 40);
             this.pictureBoxPasswordIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxPasswordIcon.TabIndex = 2;
+            this.pictureBoxPasswordIcon.TabIndex = 14;
             this.pictureBoxPasswordIcon.TabStop = false;
             // 
             // panelTop
@@ -112,7 +112,7 @@
             this.panelTop.Location = new System.Drawing.Point(0, 0);
             this.panelTop.Name = "panelTop";
             this.panelTop.Size = new System.Drawing.Size(380, 53);
-            this.panelTop.TabIndex = 3;
+            this.panelTop.TabIndex = 15;
             this.panelTop.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelTop_MouseMove);
             // 
             // labelTitle
@@ -127,7 +127,7 @@
             this.labelTitle.Location = new System.Drawing.Point(0, 0);
             this.labelTitle.Name = "labelTitle";
             this.labelTitle.Size = new System.Drawing.Size(275, 48);
-            this.labelTitle.TabIndex = 1;
+            this.labelTitle.TabIndex = 16;
             this.labelTitle.Text = "Program\'s Title";
             this.labelTitle.MouseMove += new System.Windows.Forms.MouseEventHandler(this.labelTitle_MouseMove);
             // 
@@ -141,7 +141,7 @@
             this.buttonExit.Location = new System.Drawing.Point(327, 0);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(53, 53);
-            this.buttonExit.TabIndex = 0;
+            this.buttonExit.TabIndex = 4;
             this.buttonExit.Text = "X";
             this.buttonExit.UseVisualStyleBackColor = true;
             this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
@@ -157,7 +157,7 @@
             this.buttonLogin.Location = new System.Drawing.Point(100, 350);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(180, 50);
-            this.buttonLogin.TabIndex = 4;
+            this.buttonLogin.TabIndex = 2;
             this.buttonLogin.Text = "Login";
             this.buttonLogin.UseVisualStyleBackColor = false;
             this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
@@ -172,7 +172,7 @@
             this.buttonSignup.Location = new System.Drawing.Point(100, 450);
             this.buttonSignup.Name = "buttonSignup";
             this.buttonSignup.Size = new System.Drawing.Size(180, 50);
-            this.buttonSignup.TabIndex = 4;
+            this.buttonSignup.TabIndex = 3;
             this.buttonSignup.Text = "Sign Up";
             this.buttonSignup.UseVisualStyleBackColor = true;
             this.buttonSignup.Click += new System.EventHandler(this.buttonSignup_Click);
@@ -198,7 +198,7 @@
             this.pictureBoxUserIcon.Name = "pictureBoxUserIcon";
             this.pictureBoxUserIcon.Size = new System.Drawing.Size(40, 40);
             this.pictureBoxUserIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxUserIcon.TabIndex = 2;
+            this.pictureBoxUserIcon.TabIndex = 17;
             this.pictureBoxUserIcon.TabStop = false;
             // 
             // FormLogin
