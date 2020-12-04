@@ -339,3 +339,5 @@ ASALocalRun/
 # BeatPulse healthcheck temp database
 healthchecksdb
 User-System-Ideas.json
+Helps.json
+Hide-Before-GitHub-Release.json
