@@ -1,4 +1,4 @@
-﻿namespace LoginForm
+﻿namespace Client.Frontend
 {
     partial class FormLogin
     {
@@ -13,8 +13,7 @@
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
-            if (disposing && (components != null))
-            {
+            if (disposing && (components != null)) {
                 components.Dispose();
             }
             base.Dispose(disposing);
@@ -126,9 +125,9 @@
             this.labelTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(225)))), ((int)(((byte)(249)))));
             this.labelTitle.Location = new System.Drawing.Point(0, 0);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(275, 48);
+            this.labelTitle.Size = new System.Drawing.Size(117, 48);
             this.labelTitle.TabIndex = 16;
-            this.labelTitle.Text = "Program\'s Title";
+            this.labelTitle.Text = "Client";
             this.labelTitle.MouseMove += new System.Windows.Forms.MouseEventHandler(this.labelTitle_MouseMove);
             // 
             // buttonExit

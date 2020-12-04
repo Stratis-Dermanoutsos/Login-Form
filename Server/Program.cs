@@ -1,10 +1,12 @@
+using Server.Backend;
+using Server.Frontend;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LoginForm
+namespace Server
 {
     static class Program
     {
@@ -17,7 +19,8 @@ namespace LoginForm
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormLogin());
+            Form1 myForm = new Form1();
+            Application.Run(myForm);
         }
     }
 }

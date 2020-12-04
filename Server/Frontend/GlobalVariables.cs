@@ -1,8 +1,8 @@
 ﻿using System.Drawing;
 
-namespace LoginForm.Frontend
+namespace Server.Frontend
 {
-    static class GlobalVariables
+    class GlobalVariables
     {
         public static Color midnightBlue = Color.FromArgb(30, 31, 38); // Used for Bars, Submenus
         public static Color indigoInk = Color.FromArgb(40, 54, 85); // Used for Background

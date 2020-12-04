@@ -1,72 +1,30 @@
-﻿using LoginForm.Backend;
-using LoginForm.Frontend;
-using LoginForm.Properties;
+﻿using Client.Backend;
+using Client.Properties;
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
 using System.Net.Mail;
 using System.Runtime.InteropServices;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
-namespace LoginForm
+namespace Client.Frontend
 {
     public partial class FormLogin : Form
     {
-        private List<User> users;
-
         public FormLogin()
         {
             InitializeComponent();
 
-            // textBoxEmail
+            #region <textBoxEmail>
             this.ActiveControl = textBoxEmail; // Set active
             textBoxEmail.GotFocus += textBoxEmail_GotFocus;
             textBoxEmail.LostFocus += textBoxEmail_LostFocus;
+            #endregion
 
-            // textBoxPassword
+            #region <textBoxPassword>
             textBoxPassword.GotFocus += textBoxPassword_GotFocus;
             textBoxPassword.LostFocus += textBoxPassword_LostFocus;
             textBoxPassword.PasswordChar = '*';
-
-            users = ListHandler.LoadList();
-            #region Starting Test Accounts
-            /*
-             * oke@yahoo.gr
-             * Potato69
-             * 
-             * idk42@gmail.com
-             * IamPro91
-             * 
-             * xxxProplayerxxx@hotmail.com
-             * saveMe74
-             * 
-             * whoMeIs@gmail.com
-             * IneedHelp1
-             * 
-             * thisAppSucks@yahoo.com
-             * iDkWhy345
-             * 
-             * johnIsClown@gmail.com
-             * fullPepega69
-             * 
-             * xXdontBanYasuoXx@yahoo.pl
-             * IneverFEED001
-             * 
-             * IhateLife@gmail.com
-             * edgyTeen43
-             * 
-             * IneedAnOtterArmy@unipi.gr
-             * Starting1010
-             */
             #endregion
         }
 
@@ -165,46 +123,58 @@ namespace LoginForm
         #region Login and Sign Up buttons
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            bool validEmail = EmailIsValid(textBoxEmail.Text);
-            bool validPassword = PasswordIsValid(textBoxPassword.Text);
+            #region Local Variables
+            string email = textBoxEmail.Text;
+            string password = textBoxPassword.Text;
 
-            if (validEmail && validPassword && users.Count > 0) { // If both email and password are correct
-                int index = ListHandler.BinaryRecursiveSearch(users, 0, users.Count - 1, textBoxEmail.Text);
+            bool validEmail = EmailIsValid(email);
+            bool validPassword = PasswordIsValid(password);
+            #endregion
 
-                if (index != -1 && users[index].Password.Equals(PasswordHandler.GetSha512(textBoxPassword.Text))) {
-                    FormMain mainForm = new FormMain();
-                    this.Hide(); // Hide login form
-                    mainForm.Show(); // Show main form
-                    return;
+            // If our credentials are valid, run the code
+            if (validEmail && validPassword) {
+                try {
+                    char isOke = ClientSide.SendCredentials("Server's IP", 8001, string.Format("{0} {1} 0", email, password));
+
+                    if (isOke == 'y') {
+                        // =>> Code to execute <<=
+                    } else
+                        MessageBox.Show("Email or password not correct!");
+                } catch (Exception) {
+                    MessageBox.Show("Error: Could not communicate with the Server!");
                 }
+
+                return;
             }
 
-            MessageBox.Show("Email or password not correct!");
+            MessageBox.Show("Email or password not valid.");
         }
 
         private void buttonSignup_Click(object sender, EventArgs e)
         {
-            bool validEmail = EmailIsValid(textBoxEmail.Text);
-            bool validPassword = PasswordIsValid(textBoxPassword.Text);
+            #region Local Variables
+            string email = textBoxEmail.Text;
+            string password = textBoxPassword.Text;
 
-            if (validEmail && validPassword) { // If both email and password are correct
-                int index = (users.Count < 1) ? -1 : ListHandler.BinaryRecursiveSearch(users, 0, users.Count - 1, textBoxEmail.Text);
+            bool validEmail = EmailIsValid(email);
+            bool validPassword = PasswordIsValid(password);
+            #endregion
 
-                if (index == -1) {
-                    //Add the new user and re-sort the List
-                    User newUser = new User(textBoxEmail.Text, PasswordHandler.GetSha512(textBoxPassword.Text), false);
-                    users.Add(newUser);
-                    users = ListHandler.QuickSort(users, 0, users.Count - 1);
+            if (validEmail && validPassword) {
+                try {
+                    char isOke = ClientSide.SendCredentials("192.168.56.1", 8001, string.Format("{0} {1} 1", email, password));
 
-                    ListHandler.SaveList(users); // Save to file
-
-                    MessageBox.Show("You are good to go!");
-                } else {
-                    MessageBox.Show("Email is taken");
+                    // If the signup is successful
+                    if (isOke == 'y')
+                        MessageBox.Show("Your account has been registered successfully.\nYou can now login with your credentials.");
+                    else
+                        MessageBox.Show("Email is taken");
+                } catch (Exception) {
+                    MessageBox.Show("We were unable to connect you to the server.");
                 }
-            } else { // Else
-                if (!validEmail) { // ...if email is invalid
-                    MessageBox.Show("This is not a valid email.");
+            } else {
+                if (!validEmail) { // ...if email is not invalid
+                    MessageBox.Show("This is not a valid email format.");
                 } else { // ...if password is invalid
                     string errorMessage = "This is not a valid password.\n" +
                         "Please, use a password with:\n" +
