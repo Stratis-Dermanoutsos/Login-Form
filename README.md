@@ -1,13 +1,35 @@
 # Login-Form
-A basic Login form implemented using WindowsForms and C#.
 
-The form allows the User to either Login with his existing signed up credentials or Sign Up with a new account.
+This is a full-stack native application bundle that includes both the client and the server applications.
 
-For the backend:
- - Sorting the users is done with the Quick sort algorithm.
- - The searching algorithm implemented is Binary search.
- - Password hashing is done using Sha512.
+
+## Capabilities:
+ - ### Client:
+   - Login with their existing account
+   - Sign up with a new one
+
+ - ### Server:
+   - Supports multiple requests
+   - Encrypts all passwords registered by default
+   - Has full control over the database
+     - Edit users' passwords
+     - Create new users
+     - Remove existing users
+   - Has access to detailed logs that take note of all activity
+
+This project was my attempt to learn how to create and use a practical user-handling application with a dedicated database in a native environment.
+
+### Changes required to execute the code:
+ - #### Server:
+   - Form1.cs: 19 :: "Your IP" => You IPv4 address
+   - DataHandler.cs: 16 :: "myServerAddress" and "myDatabase"
+
+ - #### Client:
+   - FormLogin.cs: 137 :: "Server's IP"
+   - FormLogin.cs: 140 :: Add code to execute on successful login
+   - FormLogin.cs: 165 :: "Server's IP"
 
 <br><br>
-###### All frontend and backend is written in C#.
+###### This is a bundle that includes 2 separate projects and are to run separately.
+###### All frontend and backend is written in C# using WindowsForms.
 
