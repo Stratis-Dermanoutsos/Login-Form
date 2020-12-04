@@ -162,7 +162,7 @@ namespace Client.Frontend
 
             if (validEmail && validPassword) {
                 try {
-                    char isOke = ClientSide.SendCredentials("192.168.56.1", 8001, string.Format("{0} {1} 1", email, password));
+                    char isOke = ClientSide.SendCredentials("Server's IP", 8001, string.Format("{0} {1} 1", email, password));
 
                     // If the signup is successful
                     if (isOke == 'y')
