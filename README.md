@@ -2,6 +2,8 @@
 
 This is a full-stack native application bundle that includes both the client and the server applications.
 
+This project was my attempt to learn how to create and use a practical user-handling application with a dedicated database in a native environment.
+
 
 ## Capabilities:
  - ### Client:
@@ -17,14 +19,12 @@ This is a full-stack native application bundle that includes both the client and
      - Remove existing users
    - Has access to detailed logs that take note of all activity
 
-This project was my attempt to learn how to create and use a practical user-handling application with a dedicated database in a native environment.
-
-### Changes required to execute the code:
- - #### Server:
+## Changes required to execute the code:
+ - ### Server:
    - Form1.cs: 19 :: "Your IP" => You IPv4 address
    - DataHandler.cs: 16 :: "myServerAddress" and "myDatabase"
 
- - #### Client:
+ - ### Client:
    - FormLogin.cs: 137 :: "Server's IP"
    - FormLogin.cs: 140 :: Add code to execute on successful login
    - FormLogin.cs: 165 :: "Server's IP"
